@@ -172,15 +172,6 @@ export default function SignUp() {
           <div className="mt-6 flex flex-col gap-5">
             <div className="flex flex-col gap-3">
               <p className="text-xs font-semibold text-neutral-700">
-                Full name
-              </p>
-              <input
-                type="email"
-                placeholder="Samuel Chen"
-                className="h-11 w-full rounded-md border border-neutral-300 bg-white px-3 text-sm text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
-              />
-
-              <p className="text-xs font-semibold text-neutral-700">
                 UWaterloo email
               </p>
               <input
@@ -189,9 +180,7 @@ export default function SignUp() {
                 className="h-11 w-full rounded-md border border-neutral-300 bg-white px-3 text-sm text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
               />
 
-              <p className="text-xs font-semibold text-neutral-700">
-                Password
-              </p>
+              <p className="text-xs font-semibold text-neutral-700">Password</p>
               <input
                 type="password"
                 placeholder="Password"
