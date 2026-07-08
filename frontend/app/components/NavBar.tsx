@@ -1,9 +1,16 @@
 import image from "../../public/assets/WATsDueLogo.jpg";
-export default function NavBar() {
+
+type NavBarProperties = {
+  className?: string;
+};
+
+export default function NavBar({ className }: NavBarProperties) {
   return (
-    <div className="bg-white p-3">
-      <div className="flex flex-row justify-around">
-        <div className="flex flex-row gap-2">
+    <div
+      className={`border-b border-neutral-200 bg-white/95 px-4 py-3 shadow-sm ${className}`}
+    >
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6">
+        <div className="flex items-center gap-2">
           <svg
             width="34"
             height="34"
@@ -42,16 +49,18 @@ export default function NavBar() {
             </defs>
           </svg>
 
-          <div className="flex flex-row mt-2">
-            <p className="text-yellow-500 font-bold">WAT</p>
+          <div className="flex items-center">
+            <p className="font-bold text-yellow-500">WAT</p>
             <span>
-              <p className="text-black font-semibold">sDue</p>
+              <p className="font-semibold text-neutral-950">sDue</p>
             </span>
           </div>
         </div>
-        <div className="flex gap-10">
-          <button className="text-black cursor-pointer">Sign in</button>
-          <button className="bg-black text-white rounded-lg px-2 py-1 cursor-pointer">
+        <div className="flex items-center gap-3">
+          <button className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
+            Sign in
+          </button>
+          <button className="cursor-pointer rounded-md bg-neutral-950 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
             Get Started
           </button>
         </div>

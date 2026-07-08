@@ -1,20 +1,20 @@
 import NavBar from "../app/components/NavBar";
-
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-neutral-50 text-neutral-950">
       <NavBar />
-      <hr className="shrink-0" />
+      <hr className="shrink-0 border-neutral-200" />
 
-      <div className="bg-white flex-1 min-h-0">
-        <div className="flex flex-col items-center">
+      <div className="min-h-0 flex-1 bg-neutral-50">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-12 sm:px-6 lg:py-14">
           <svg
             width="54"
             height="54"
             viewBox="0 0 34 34"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="mt-15"
+            className="mt-2 drop-shadow-sm"
           >
             <g clip-path="url(#clip0_0_14)">
               <path
@@ -46,79 +46,87 @@ export default function Home() {
               </clipPath>
             </defs>
           </svg>
-          <div className="flex flex-row mt-2">
-            <p className="text-black font-bold text-[48px]">WAT</p>
+          <div className="mt-3 flex items-center">
+            <p className="text-5xl font-bold text-neutral-950 sm:text-6xl">
+              WAT
+            </p>
             <span>
-              <p className="text-black font-semibold text-[48px]">sDue</p>
+              <p className="text-5xl font-semibold text-neutral-950 sm:text-6xl">
+                sDue
+              </p>
             </span>
           </div>
-          <p className="text-gray-400 text-lg">
+          <p className="mt-3 max-w-2xl text-center text-base leading-7 text-neutral-500 sm:text-lg">
             Turn your Waterloo course outlines into a clean academic calendar.
           </p>
-          <div className="flex flex-row gap-3 mt-8 ">
-            <button className="bg-black text-white rounded-md p-2 cursor-pointer">
-              Start Planning Free
-            </button>
-            <button className="text-black outline cursor-pointer rounded-md px-3">
-              Import Syllabus
-            </button>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/signup">
+              <button className="inline-flex h-11 w-full cursor-pointer items-center justify-center rounded-md bg-neutral-950 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 sm:w-auto">
+                Start Planning Free
+              </button>
+            </Link>
+            <Link href="/signup">
+              <button className="inline-flex h-11 w-full cursor-pointer items-center justify-center rounded-md border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 shadow-sm transition-colors hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 sm:w-auto">
+                Import Syllabus
+              </button>
+            </Link>
           </div>
-          <div className="flex flex-col mt-5 outline outline-2 outline-gray-300 h-85 w-200 rounded-xl">
-            <div className="flex flex-row justify-between">
-              <p className="font-bold ms-4 mt-4 text-black">This Week</p>
-              <p className="text-gray-500 me-4 mt-4">Jan 22 - Jan 28</p>
+          <div className="mt-10 flex w-full max-w-3xl flex-col rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+            <div className="flex items-center justify-between gap-4">
+              <p className="font-semibold text-neutral-950">This Week</p>
+              <p className="text-sm text-neutral-500">Jan 22 - Jan 28</p>
             </div>
-            <div className="flex flex-row">
-              <span className="bg-blue-500 h-20 w-2 mt-5 ms-10"></span>
-              <div className="mt-5 w-180 h-20 bg-gray-100 rounded flex flex-col">
-                <div className="flex flex-row justify-between">
-                  <div className="flex flex-row mt-1">
-                    <div className="rounded-md bg-blue-500 p-1 text-white text-center w-15 ms-2 mt-2 text-xs h-6">
+            <div className="mt-5 flex items-stretch gap-3 sm:gap-4">
+              <span className="w-1.5 rounded-full bg-blue-500"></span>
+              <div className="flex min-h-20 flex-1 flex-col justify-center rounded-lg bg-neutral-50 p-3 ring-1 ring-neutral-200">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <div className="inline-flex h-6 min-w-14 items-center justify-center rounded-md bg-blue-500 px-2 text-center text-xs font-semibold text-white">
                       CS 445
                     </div>
-                    <p className="text-black font-bold ms-2 mt-[9] text-sm">
+                    <p className="truncate text-sm font-semibold text-neutral-950">
                       Assignment 2
                     </p>
                   </div>
-                  <div className="text-green-500 flex items-center bg-green-300 text-xs me-2 h-4 p-3 mt-3 rounded-lg">
+                  <div className="inline-flex h-7 shrink-0 items-center rounded-full bg-emerald-50 px-3 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200">
                     Due
                   </div>
                 </div>
-                <p className="text-gray-500 ms-2 text-sm mt-1">
+                <p className="mt-2 text-sm text-neutral-500">
                   Jan 28 at 11:59 PM
                 </p>
               </div>
             </div>
-            <div className="flex flex-row">
-              <span className="bg-purple-500 h-20 w-2 mt-5 ms-10"></span>
-              <div className="mt-5 w-180 h-20 bg-gray-100 rounded flex flex-col">
-                <div className="flex flex-row justify-between">
-                  <div className="flex flex-row mt-1">
-                    <div className="rounded-md bg-purple-500 p-1 text-white text-center w-15 ms-2 mt-2 text-xs h-6">
+            <div className="mt-4 flex items-stretch gap-3 sm:gap-4">
+              <span className="w-1.5 rounded-full bg-purple-500"></span>
+              <div className="flex min-h-20 flex-1 flex-col justify-center rounded-lg bg-neutral-50 p-3 ring-1 ring-neutral-200">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <div className="inline-flex h-6 min-w-14 items-center justify-center rounded-md bg-purple-500 px-2 text-center text-xs font-semibold text-white">
                       CS 445
                     </div>
-                    <p className="text-black font-bold ms-2 mt-[9] text-sm">
+                    <p className="truncate text-sm font-semibold text-neutral-950">
                       Midterm
                     </p>
                   </div>
-                  <div className="text-red-500 flex items-center bg-red-300 text-xs me-2 h-4 p-3 mt-3 rounded-lg">
+                  <div className="inline-flex h-7 shrink-0 items-center rounded-full bg-red-50 px-3 text-xs font-medium text-red-700 ring-1 ring-red-200">
                     Exam
                   </div>
                 </div>
-                <p className="text-gray-500 ms-2 text-sm mt-1">
+                <p className="mt-2 text-sm text-neutral-500">
                   Jan 30 at 7:00 PM
                 </p>
               </div>
             </div>
-            <div className="rounded-xl bg-[#FFE599] w-182 h-12 mt-5 ms-10 flex flex-row justify-between">
-              <div className="flex flex-row gap-2 mt-4">
+            <div className="mt-5 flex min-h-12 w-full items-center justify-between gap-3 rounded-lg bg-yellow-50 px-3 py-3 ring-1 ring-yellow-200">
+              <div className="flex items-center gap-2">
                 <svg
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="ms-2"
+                  className="shrink-0"
                 >
                   <g clip-path="url(#clip0_0_88)">
                     <path
@@ -149,22 +157,24 @@ export default function Home() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="text-black text-xs">
+                <p className="text-xs font-medium text-neutral-900">
                   Schedule conflict detected on Wednesday
                 </p>
               </div>
-              <p className="text-black text-xs underline mt-4 me-4">Fix It</p>
+              <p className="shrink-0 text-xs font-semibold text-neutral-950 underline">
+                Fix It
+              </p>
             </div>
           </div>
-          <div className="flex flex-row mt-8 gap-7">
-            <div className="w-[325px] outline outline-2 outline-gray-200 h-[181px] rounded-xl flex flex-col gap-2">
+          <div className="mt-8 grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="flex min-h-[181px] flex-col rounded-lg border border-neutral-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               <svg
                 width="40"
                 height="40"
                 viewBox="0 0 40 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mt-5 ms-5"
+                className="mb-4"
               >
                 <path
                   d="M0 12C0 5.37258 5.37258 0 12 0H28C34.6274 0 40 5.37258 40 12V28C40 34.6274 34.6274 40 28 40H12C5.37258 40 0 34.6274 0 28V12Z"
@@ -192,21 +202,21 @@ export default function Home() {
                   stroke-linejoin="round"
                 />
               </svg>
-              <h2 className="font-bold text-lg text-black ms-5 mt-1">
+              <h2 className="text-lg font-semibold text-neutral-950">
                 Import outlines
               </h2>
-              <p className="text-gray-400 text-sm ms-5">
+              <p className="mt-2 text-sm leading-6 text-neutral-500">
                 Upload PDFs or paste syllabus text to extract course details
               </p>
             </div>
-            <div className="w-[325px] outline outline-2 outline-gray-200 h-[181px] rounded-xl flex flex-col gap-2">
+            <div className="flex min-h-[181px] flex-col rounded-lg border border-neutral-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               <svg
                 width="40"
                 height="40"
                 viewBox="0 0 40 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mt-5 ms-5"
+                className="mb-4"
               >
                 <path
                   d="M0 12C0 5.37258 5.37258 0 12 0H28C34.6274 0 40 5.37258 40 12V28C40 34.6274 34.6274 40 28 40H12C5.37258 40 0 34.6274 0 28V12Z"
@@ -254,21 +264,21 @@ export default function Home() {
                 </defs>
               </svg>
 
-              <h2 className="font-bold text-lg text-black ms-5 mt-1">
+              <h2 className="text-lg font-semibold text-neutral-950">
                 Detect Due Dates
               </h2>
-              <p className="text-gray-400 text-sm ms-5">
+              <p className="mt-2 text-sm leading-6 text-neutral-500">
                 AI automatically finds assignments, exams, and deadlines
               </p>
             </div>
-            <div className="w-[325px] outline outline-2 outline-gray-200 h-[181px] rounded-xl flex flex-col gap-2">
+            <div className="flex min-h-[181px] flex-col rounded-lg border border-neutral-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               <svg
                 width="40"
                 height="40"
                 viewBox="0 0 40 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mt-5 ms-5"
+                className="mb-4"
               >
                 <path
                   d="M0 12C0 5.37258 5.37258 0 12 0H28C34.6274 0 40 5.37258 40 12V28C40 34.6274 34.6274 40 28 40H12C5.37258 40 0 34.6274 0 28V12Z"
@@ -297,10 +307,10 @@ export default function Home() {
                 />
               </svg>
 
-              <h2 className="font-bold text-lg text-black ms-5 mt-1">
+              <h2 className="text-lg font-semibold text-neutral-950">
                 Check Conflicts
               </h2>
-              <p className="text-gray-400 text-sm ms-5">
+              <p className="mt-2 text-sm leading-6 text-neutral-500">
                 Get alerts for overlapping lectures and deadline clusters
               </p>
             </div>
