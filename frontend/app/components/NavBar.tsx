@@ -1,5 +1,5 @@
 import image from "../../public/assets/WATsDueLogo.jpg";
-
+import Link from "next/link";
 type NavBarProperties = {
   className?: string;
 };
@@ -57,12 +57,18 @@ export default function NavBar({ className }: NavBarProperties) {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
+          <Link
+            href="/signin"
+            className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+          >
             Sign in
-          </button>
-          <button className="cursor-pointer rounded-md bg-neutral-950 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
+          </Link>
+          <Link
+            href="/signup"
+            className="cursor-pointer rounded-md bg-neutral-950 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </div>
